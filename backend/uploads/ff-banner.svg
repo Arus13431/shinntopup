@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ff-banner-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4e0202" />
+      <stop offset="50%" stop-color="#a80202" />
+      <stop offset="100%" stop-color="#ff4b2b" />
+    </linearGradient>
+    <filter id="glow-ff-banner">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="400" fill="url(#ff-banner-grad)"/>
+  <rect width="1160" height="360" x="20" y="20" rx="16" fill="#0f1923" opacity="0.8"/>
+  <g transform="translate(150, 200)" filter="url(#glow-ff-banner)">
+    <path d="M 0 -70 C 30 -30 50 10 30 50 C 10 80 -50 80 -40 40 C -30 50 -10 50 -10 20 C -10 -30 -30 -20 0 -70 Z" fill="#ff4b2b"/>
+    <path d="M 10 -30 C 20 -10 30 10 20 30 C 10 50 -30 50 -20 30 C -16 36 -4 36 -4 20 C -4 -10 -16 -6 10 -30 Z" fill="#ffa07a"/>
+  </g>
+  <text x="350" y="200" font-family="'Outfit', sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="4">FREE FIRE</text>
+  <text x="350" y="250" font-family="'Inter', sans-serif" font-size="20" fill="#ff4b2b" letter-spacing="2">TOP-UP DIAMOND PALING MURAH SE-INDONESIA</text>
+</svg>

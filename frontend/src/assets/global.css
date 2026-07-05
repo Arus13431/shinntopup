@@ -1,0 +1,611 @@
+/* Global Design System ShinnTopUp & Gaming Platform */
+
+:root {
+  --bg-primary: #090e1a; /* Biru-hitam dalam langit malam */
+  --bg-secondary: #0e162b; /* Kartu, panel, dan sidebar */
+  --bg-tertiary: #1a264a; /* Background navy lebih terang */
+  --color-primary: #8b5cf6; /* Ungu medium elegan */
+  --color-primary-hover: #7c3aed;
+  --color-accent: #38bdf8; /* Teal/cyan aksen sekunder */
+  --color-accent-rgb: 56, 189, 248;
+  --color-gold: #FFD700; /* Emas premium */
+  --text-white: #E8E8F0; /* Teks utama */
+  --text-muted: #B2B9D0; /* Teks sekunder/placeholder */
+  --border-glow: rgba(139, 92, 246, 0.3);
+  --border-glow-active: rgba(56, 189, 248, 0.6);
+  --font-title: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --glass-bg: rgba(14, 22, 43, 0.75); /* Transparan & menyatu dengan background */
+  --glass-border: rgba(56, 189, 248, 0.12);
+  --glass-blur: blur(20px);
+}
+
+body {
+  background: linear-gradient(135deg, #0284c7 0%, #07152c 40%, #030712 100%) no-repeat fixed;
+  color: var(--text-white) !important;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* High Contrast Accessibility Overrides on Dark Backgrounds */
+.text-muted {
+  color: #B2B9D0 !important;
+}
+.text-white-50 {
+  color: #C2C9E0 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Page Transitions */
+.page-enter-active,
+.route-fade-enter-active {
+  transition: all 0.35s ease-out;
+}
+.page-enter-from,
+.route-fade-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Glowing organic blue-purple-black motif at the bottom-right of the card */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, 
+                              rgba(56, 189, 248, 0.22) 0%, 
+                              rgba(139, 92, 246, 0.25) 40%, 
+                              rgba(7, 9, 22, 0.8) 75%, 
+                              transparent 100%);
+  border-radius: 50%;
+  filter: blur(25px);
+  pointer-events: none;
+  z-index: -1;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+}
+
+.glass-card:hover::before {
+  transform: translate(-15px, -15px) scale(1.25);
+  opacity: 0.9;
+}
+
+.glass-card-hover:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 32px 0 rgba(56, 189, 248, 0.2);
+}
+
+/* Premium Glassmorphic Card with Gradient Border (Blue-Purple-Black) */
+.premium-glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent !important;
+  background-clip: padding-box;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.premium-glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px; /* border thickness */
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.35) 0%, rgba(139, 92, 246, 0.3) 45%, rgba(0, 0, 0, 0.95) 100%);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.premium-glass-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(56, 189, 248, 0.18);
+}
+
+.premium-glass-card:hover::after {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.75) 0%, rgba(139, 92, 246, 0.6) 45%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+
+/* Button Ripple & Hover Effects */
+.btn-shinn-primary {
+  background-color: var(--color-primary);
+  color: var(--text-white);
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-shinn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 0 15px rgba(26, 111, 212, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-shinn-outline {
+  background: transparent;
+  color: var(--text-white);
+  border: 1px solid var(--color-primary);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+}
+
+.btn-shinn-outline:hover {
+  background-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(26, 111, 212, 0.3);
+}
+
+/* Redesigned Premium 3:4 Game Card (Tampilan Default & Hover) */
+.custom-game-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #12131a; /* Background gelap bernuansa abu-abu/coklat gelap */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: border-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.game-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: transform 0.4s ease-in-out;
+}
+
+.game-card-overlay {
+  position: absolute;
+  inset: 0;
+  /* Overlay gelap abu-abu default */
+  background: linear-gradient(to bottom, rgba(18, 19, 26, 0.5) 0%, rgba(18, 19, 26, 0.88) 100%);
+  z-index: 2;
+  transition: background 0.4s ease-in-out;
+}
+
+.game-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 4;
+  background-color: #00d2ff; /* Background biru neon */
+  color: #000000; /* Teks hitam */
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+.game-card-content-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.game-card-details {
+  width: 100%;
+  text-align: left;
+}
+
+.game-name-title {
+  font-size: 15px;
+  line-height: 1.3;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ffffff !important;
+  opacity: 0.35; /* Samar-samar by default */
+  transition: opacity 0.4s ease-in-out;
+}
+
+.game-developer-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out, transform 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+/* Hover States (Transisi 0.4s ease-in-out) */
+.custom-game-card:hover {
+  border-color: var(--color-accent); /* Border tipis teal neon */
+  box-shadow: 0 0 25px rgba(62, 207, 207, 0.45); /* Glow teal neon */
+}
+
+.custom-game-card:hover .game-card-bg {
+  transform: scale(1.05); /* Gambar karakter sedikit zoom-in */
+}
+
+.custom-game-card:hover .game-card-overlay {
+  /* Berubah menjadi gradien gelap dengan aksen warna teal neon di bagian bawah */
+  background: linear-gradient(to bottom, rgba(18, 19, 26, 0.3) 0%, rgba(18, 19, 26, 0.6) 60%, rgba(62, 207, 207, 0.25) 100%);
+}
+
+.custom-game-card:hover .game-name-title {
+  opacity: 1; /* Terang murni saat di-hover */
+}
+
+.custom-game-card:hover .game-developer-text {
+  opacity: 1;
+  max-height: 20px;
+  transform: translateY(0); /* Slide-up smooth */
+}
+
+/* Button Outlined Kuning Neon "Tampilkan Lainnya" */
+.btn-show-more {
+  background: transparent;
+  color: #ffffff !important;
+  border: 1px solid #d4ff00; /* Outlined border kuning neon */
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 28px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.5px;
+}
+
+.btn-show-more:hover {
+  background-color: #d4ff00;
+  color: #000000 !important; /* Teks hitam saat hover */
+  box-shadow: 0 0 15px rgba(212, 255, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+  background: linear-gradient(90deg, #172535 25%, #253952 50%, #172535 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Selection Grid Item */
+.selection-grid-item {
+  border: 2px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.selection-grid-item:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.selection-grid-item.active {
+  border-color: var(--color-accent);
+  background-color: rgba(0, 210, 255, 0.05);
+}
+
+.selection-grid-item.active::after {
+  content: "✓";
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  color: var(--color-accent);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--text-white) 30%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* NProgress Customization */
+#nprogress .bar {
+  background: var(--color-accent) !important;
+  height: 3px !important;
+  box-shadow: 0 0 10px var(--color-accent) !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--color-accent) !important;
+  border-left-color: var(--color-accent) !important;
+}
+
+/* Fix text color contrast for all inputs, select dropdowns, and textareas */
+input.form-control, select.form-select, textarea.form-control {
+  color: #ffffff !important;
+}
+
+input.form-control::placeholder, textarea.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.suggestion-title {
+  color: #ffffff !important;
+}
+
+/* Fix text contrast in search inputs inside navbar/recommender */
+.search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Chatbot widget inputs white text */
+.chat-footer input {
+  color: #ffffff !important;
+}
+
+.chat-footer input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Gaming Platform Accent Gradients */
+.bg-gradient-neon-purple {
+  background: linear-gradient(135deg, #8a2be2 0%, #4a00e0 100%) !important;
+}
+
+.bg-gradient-electric-blue {
+  background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%) !important;
+}
+
+.bg-gradient-neon-gold {
+  background: linear-gradient(135deg, #ffaa00 0%, #ff5500 100%) !important;
+}
+
+/* Genre Badges */
+.badge-genre {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.genre-moba { background: rgba(0, 210, 255, 0.15); color: #00d2ff; border: 1px solid rgba(0, 210, 255, 0.3); }
+.genre-battle-royale { background: rgba(255, 75, 43, 0.15); color: #ff4b2b; border: 1px solid rgba(255, 75, 43, 0.3); }
+.genre-rpg { background: rgba(138, 43, 226, 0.15); color: #8a2be2; border: 1px solid rgba(138, 43, 226, 0.3); }
+.genre-fps { background: rgba(255, 70, 85, 0.15); color: #ff4655; border: 1px solid rgba(255, 70, 85, 0.3); }
+.genre-strategy { background: rgba(255, 170, 0, 0.15); color: #ffaa00; border: 1px solid rgba(255, 170, 0, 0.3); }
+
+/* Gaming sidebar tab adjustments */
+.btn-sidebar-tab {
+  text-align: left;
+  border-left: 3px solid transparent !important;
+  border-radius: 0 8px 8px 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-sidebar-tab.active {
+  border-left-color: var(--color-primary) !important;
+  background: rgba(138, 43, 226, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* Custom XP bar progress styling */
+.xp-progress {
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.xp-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+/* Bidirectional Scroll Animations (350ms ease-out) */
+.scroll-animate {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity 350ms ease-out, transform 350ms ease-out;
+}
+
+.scroll-animate-up {
+  transform: translateY(30px);
+}
+
+.scroll-animate-down {
+  transform: translateY(-30px);
+}
+
+.scroll-animate.scroll-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Shooting Stars Background Animation */
+.shooting-stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Sits below everything, including body overlays and glass cards */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shooting-star {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, var(--color-accent), rgba(56, 189, 248, 0));
+  filter: drop-shadow(0 0 6px var(--color-accent));
+  animation: tail 3500ms ease-in-out infinite, shooting 3500ms ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.shooting-star::before, .shooting-star::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 0, 0), var(--color-accent), rgba(0, 0, 0, 0));
+  border-radius: 100%;
+  animation: shining 3500ms ease-in-out infinite;
+}
+
+.shooting-star::before {
+  transform: translateX(50%) rotate(45deg);
+}
+
+.shooting-star::after {
+  transform: translateX(50%) rotate(-45deg);
+}
+
+.shooting-star:nth-child(1) {
+  top: 5%;
+  right: 15%;
+  animation-delay: 800ms;
+  animation-duration: 2800ms;
+}
+
+.shooting-star:nth-child(2) {
+  top: 15%;
+  right: 35%;
+  animation-delay: 2200ms;
+  animation-duration: 3400ms;
+}
+
+.shooting-star:nth-child(3) {
+  top: 8%;
+  right: 65%;
+  animation-delay: 4100ms;
+  animation-duration: 3000ms;
+}
+
+.shooting-star:nth-child(4) {
+  top: 28%;
+  right: 20%;
+  animation-delay: 0ms;
+  animation-duration: 3800ms;
+}
+
+.shooting-star:nth-child(5) {
+  top: 40%;
+  right: 55%;
+  animation-delay: 5500ms;
+  animation-duration: 3100ms;
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 120px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 4px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(0) translateY(0) rotate(28deg);
+  }
+  100% {
+    transform: translateX(-1200px) translateY(600px) rotate(28deg);
+  }
+}
+
+
+

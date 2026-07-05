@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pubg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2994A" />
+      <stop offset="100%" stop-color="#F2C94C" />
+    </linearGradient>
+    <filter id="glow-pubg">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#pubg-grad)"/>
+  <rect width="380" height="230" x="10" y="10" rx="12" fill="#0f1923" opacity="0.85"/>
+  <g transform="translate(200, 110)" filter="url(#glow-pubg)">
+    <!-- Helmet representation -->
+    <path d="M -30 0 C -30 -30 30 -30 30 0 C 30 20 20 30 0 30 C -20 30 -30 20 -30 0 Z" fill="#F2994A"/>
+    <rect x="-25" y="-2" width="50" height="8" rx="2" fill="#0f1923"/>
+    <path d="M -15 15 L 15 15 L 10 25 L -10 25 Z" fill="#F2C94C"/>
+  </g>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">PUBG MOBILE</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="12" fill="#F2994A" text-anchor="middle" letter-spacing="1">BATTLEGROUNDS</text>
+</svg>

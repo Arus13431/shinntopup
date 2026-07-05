@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lol-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021024" />
+      <stop offset="50%" stop-color="#073b73" />
+      <stop offset="100%" stop-color="#00d2ff" />
+    </linearGradient>
+    <filter id="glow-lol">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#lol-neon)"/>
+  <rect width="382" height="232" x="9" y="9" rx="12" fill="#00060f" opacity="0.9"/>
+  <!-- LOL L Letter / Hextech icon -->
+  <g transform="translate(200, 105)" filter="url(#glow-lol)">
+    <path d="M -15 -30 L 15 -30 L 25 -10 L 0 25 L -25 -10 Z" fill="#00d2ff"/>
+    <path d="M -10 -25 L 10 -25 L 17 -10 L 0 17 L -17 -10 Z" fill="#00060f"/>
+  </g>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">LEAGUE OF LEGENDS</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#00d2ff" text-anchor="middle" letter-spacing="2">HEXTECH MOBA ARENA</text>
+</svg>

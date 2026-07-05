@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hsr-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f0236" />
+      <stop offset="50%" stop-color="#6902b3" />
+      <stop offset="100%" stop-color="#bf00ff" />
+    </linearGradient>
+    <filter id="glow-hsr">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#hsr-neon)"/>
+  <rect width="382" height="232" x="9" y="9" rx="12" fill="#0d0017" opacity="0.9"/>
+  <!-- Train Star Rail shape -->
+  <g transform="translate(200, 105)" filter="url(#glow-hsr)">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#bf00ff" stroke-width="3"/>
+    <path d="M -25 -5 L 25 -5 L 15 15 L -15 15 Z" fill="#ffffff"/>
+    <circle cx="0" cy="-15" r="8" fill="#ffaa00"/>
+  </g>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">HONKAI: STAR RAIL</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#bf00ff" text-anchor="middle" letter-spacing="2">SPACE FANTASY RPG</text>
+</svg>

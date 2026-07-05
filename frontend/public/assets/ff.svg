@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ff-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d0303" />
+      <stop offset="50%" stop-color="#a80202" />
+      <stop offset="100%" stop-color="#ff4b2b" />
+    </linearGradient>
+    <filter id="glow-ff">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#ff-neon)"/>
+  <rect width="382" height="232" x="9" y="9" rx="12" fill="#120101" opacity="0.9"/>
+  <!-- Fire Flame representation -->
+  <g transform="translate(200, 110)" filter="url(#glow-ff)">
+    <path d="M 0 -35 C 20 -15 30 5 20 25 C 10 40 -20 40 -15 20 C -10 25 -5 20 -5 10 C -5 -15 -15 -10 0 -35 Z" fill="#ff4b2b"/>
+  </g>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">FREE FIRE</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#ff4b2b" text-anchor="middle" letter-spacing="2">BATTLEGROUNDS</text>
+</svg>

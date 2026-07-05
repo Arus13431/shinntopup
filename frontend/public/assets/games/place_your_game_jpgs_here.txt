@@ -1,0 +1,43 @@
+================================================================================
+          TEMPAT MENYIMPAN GAMBAR KARAKTER GAME (BACKGROUND)
+================================================================================
+
+Halo Sobat Shinn! Folder 'games' ini telah berhasil dibuat khusus untuk Anda menyimpan
+seluruh gambar latar belakang karakter game (Product Card) berukuran potret (3:4).
+
+JALUR DIREKTORI PADA WINDOWS:
+d:\projects shinn\shinntopup\frontend\public\assets\games\
+
+--------------------------------------------------------------------------------
+1. DIMANA SAYA MENARUH GAMBARNYA?
+--------------------------------------------------------------------------------
+Letakkan file gambar bertipe JPG (.jpg) Anda langsung di dalam folder ini.
+Pastikan nama file gambar menggunakan HURUF KECIL (lowercase) dan sama persis dengan
+slug game yang terdaftar di database.
+
+CONTOH FILE GAMBAR DI FOLDER INI:
+- mobile-legends.jpg      (untuk Mobile Legends Bang Bang)
+- magic-chess.jpg         (untuk Magic Chess Go Go)
+- arena-breakout.jpg      (untuk Arena Breakout Infinite)
+- free-fire.jpg           (untuk Free Fire)
+- free-fire-max.jpg       (untuk Free Fire MAX)
+- pubg-mobile.jpg         (untuk PUBG Mobile)
+- genshin-impact.jpg      (untuk Genshin Impact)
+- codm.jpg                (untuk Call of Duty Mobile)
+- honkai-star-rail.jpg    (untuk Honkai Star Rail)
+- valorant.jpg            (untuk Valorant)
+
+--------------------------------------------------------------------------------
+2. APA YANG TERJADI JIKA GAMBAR BELUM SAYA TARUH DI FOLDER INI?
+--------------------------------------------------------------------------------
+Sistem ShinnTopUp sudah dilengkapi fitur "Fallback Background" otomatis.
+Apabila Anda belum menaruh gambar .jpg di folder ini, kartu game di website Anda
+tidak akan error atau pecah, melainkan secara anggun menampilkan warna gradien gelap
+abu-abu premium (aesthetic dark-theme) secara bawaan.
+
+--------------------------------------------------------------------------------
+3. CARA MENAMBAH ATAU MENGGANTI GAME BARU (BACA DETAIL DI HALAMAN CHAT / WALKTHROUGH)
+--------------------------------------------------------------------------------
+Silakan lihat panduan komprehensif di transcript chat untuk petunjuk baris kode 
+dan cara menambahkan game baru dari awal secara praktis.
+================================================================================

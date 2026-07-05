@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="genshin-banner-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f033d" />
+      <stop offset="50%" stop-color="#3d0075" />
+      <stop offset="100%" stop-color="#8e2de2" />
+    </linearGradient>
+    <filter id="glow-genshin-banner">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="400" fill="url(#genshin-banner-grad)"/>
+  <rect width="1160" height="360" x="20" y="20" rx="16" fill="#0f1923" opacity="0.8"/>
+  <g transform="translate(150, 200)" filter="url(#glow-genshin-banner)">
+    <path d="M 0 -60 L 12 -15 L 50 -15 L 20 8 L 32 45 L 0 22 L -32 45 L -20 8 L -50 -15 L -12 -15 Z" fill="#e0aa3e"/>
+  </g>
+  <text x="350" y="200" font-family="'Outfit', sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="4">GENSHIN IMPACT</text>
+  <text x="350" y="250" font-family="'Inter', sans-serif" font-size="20" fill="#8e2de2" letter-spacing="2">TOP-UP GENESIS CRYSTAL & WELKIN MOON INSTAN</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ml-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12002f" />
+      <stop offset="50%" stop-color="#4e008e" />
+      <stop offset="100%" stop-color="#9d00ff" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#ml-neon)"/>
+  <rect width="382" height="232" x="9" y="9" rx="12" fill="#0b001a" opacity="0.9"/>
+  <!-- Decorative Cyberpunk shapes -->
+  <path d="M 20 20 L 60 20 L 20 60 Z" fill="#9d00ff" opacity="0.3" />
+  <circle cx="200" cy="110" r="50" fill="none" stroke="#9d00ff" stroke-width="3" filter="url(#glow)"/>
+  <!-- Crown Icon representing MOBA King -->
+  <path d="M 180 125 L 170 95 L 185 105 L 200 85 L 215 105 L 230 95 L 220 125 Z" fill="#00d2ff" filter="url(#glow)"/>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">MOBILE LEGENDS</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#00d2ff" text-anchor="middle" letter-spacing="2">BANG BANG</text>
+</svg>

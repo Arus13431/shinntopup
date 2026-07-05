@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pubg-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b1400" />
+      <stop offset="50%" stop-color="#803b00" />
+      <stop offset="100%" stop-color="#ff9900" />
+    </linearGradient>
+    <filter id="glow-pubg">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#pubg-neon)"/>
+  <rect width="382" height="232" x="9" y="9" rx="12" fill="#0d0600" opacity="0.9"/>
+  <!-- Helmet representational shape -->
+  <g transform="translate(200, 105)" filter="url(#glow-pubg)">
+    <path d="M -30 10 C -30 -25 30 -25 30 10 C 30 25 15 30 0 30 C -15 30 -30 25 -30 10 Z" fill="#ff9900"/>
+    <rect x="-22" y="8" width="44" height="6" fill="#0d0600"/>
+  </g>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">PUBG MOBILE</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#ff9900" text-anchor="middle" letter-spacing="2">BATTLE ROYALE SHOOTER</text>
+</svg>

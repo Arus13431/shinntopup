@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="val-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d0315" />
+      <stop offset="50%" stop-color="#a30230" />
+      <stop offset="100%" stop-color="#ff4655" />
+    </linearGradient>
+    <filter id="glow-val">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#val-neon)"/>
+  <rect width="382" height="232" x="9" y="9" rx="12" fill="#120005" opacity="0.9"/>
+  <!-- Valorant V Logo -->
+  <g transform="translate(200, 105)" filter="url(#glow-val)">
+    <path d="M -30 -35 L -10 -35 L 20 15 L 5 15 Z" fill="#ff4655"/>
+    <path d="M 30 -35 L 10 -35 L -20 15 L -5 15 Z" fill="#ffffff" opacity="0.8"/>
+  </g>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">VALORANT</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#ff4655" text-anchor="middle" letter-spacing="3">TACTICAL FPS HERO</text>
+</svg>

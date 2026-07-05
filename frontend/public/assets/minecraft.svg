@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mine-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#093f18" />
+      <stop offset="50%" stop-color="#1b7a2d" />
+      <stop offset="100%" stop-color="#2ecc71" />
+    </linearGradient>
+    <filter id="glow-mine">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#mine-neon)"/>
+  <rect width="382" height="232" x="9" y="9" rx="12" fill="#041a0a" opacity="0.9"/>
+  <!-- Block shape -->
+  <g transform="translate(200, 105)" filter="url(#glow-mine)">
+    <rect x="-25" y="-25" width="50" height="50" rx="6" fill="#2ecc71" />
+    <rect x="-18" y="-18" width="15" height="15" fill="#27ae60" />
+    <rect x="3" y="3" width="15" height="15" fill="#27ae60" />
+  </g>
+  <text x="200" y="195" font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">MINECRAFT</text>
+  <text x="200" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#2ecc71" text-anchor="middle" letter-spacing="2">SANDBOX ADVENTURE RPG</text>
+</svg>
