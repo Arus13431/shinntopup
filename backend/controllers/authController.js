@@ -572,7 +572,7 @@ export const uploadAvatar = async (req, res, next) => {
       throw new Error('Harap sertakan file gambar');
     }
 
-    const avatarUrl = `/uploads/${req.file.filename}`;
+    const avatarUrl = req.file.path;
 
     if (mongoose.connection.readyState !== 1) {
       const user = mockUsers.find(u => u._id === req.user._id || u._id === req.user.id);
