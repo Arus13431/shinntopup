@@ -317,8 +317,8 @@ export const createProduct = async (req, res, next) => {
       });
     }
 
-    const finalImage = req.files && req.files.image ? `/uploads/${req.files.image[0].filename}` : (req.body.image || `/assets/games/${slug}.jpg`);
-    const finalBannerImage = req.files && req.files.bannerImage ? `/uploads/${req.files.bannerImage[0].filename}` : (req.body.bannerImage || `/assets/games/${slug}.jpg`);
+    const finalImage = req.files && req.files.image ? req.files.image[0].path : (req.body.image || `/assets/games/${slug}.jpg`);
+    const finalBannerImage = req.files && req.files.bannerImage ? req.files.bannerImage[0].path : (req.body.bannerImage || `/assets/games/${slug}.jpg`);
 
     const product = await Product.create({
       name,
@@ -413,10 +413,10 @@ export const updateProduct = async (req, res, next) => {
 
     if (req.files) {
       if (req.files.image) {
-        product.image = `/uploads/${req.files.image[0].filename}`;
+        product.image = req.files.image[0].path;
       }
       if (req.files.bannerImage) {
-        product.bannerImage = `/uploads/${req.files.bannerImage[0].filename}`;
+        product.bannerImage = req.files.bannerImage[0].path;
       }
     }
 
