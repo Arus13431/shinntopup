@@ -1,4 +1,6 @@
+console.log('DEBUG API URL:', import.meta.env.VITE_API_URL);
 import { createApp } from 'vue';
+
 import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
